@@ -1,0 +1,215 @@
+ajax means = (Asynchronous JavaScript And XML)AJAX allows the webpage to communicate with the server 
+(PHP) without refreshing the entire page.
+
+Only the required part of the page gets updated ✔   You click a button / submit form
+No screen flicker ✔                                 Data is sent in the background
+Super fast ✔                                        Page does NOT reload
+Modern UI ✔                                         Only required data updates
+AJAX lets a web page talk to the server without reloading the page.
+
+JSON = JavaScript Object Notation
+It is a lightweight format to store and transfer data between server (PHP) and browser (JS).
+
+How AJAX and JSON work together
+Most of the time:
+AJAX = sending request
+JSON = data format of response
+Example:
+-AJAX request sent
+-Server returns JSON
+-JavaScript reads JSON
+-Page updates
+-----------work flow of ajax and api and json-------------
+(“AJAX sends request → API receives request → 
+API returns JSON data or message → AJAX shows data in browser”)
+
+🔁 Correct flow (simple)
+-AJAX → sends request (from browser)
+-API / Server → processes request
+-JSON → response format
+-AJAX → reads JSON
+-Browser → displays result
+
+
+
+// url: "/poc_up3/public/personal/store",    this for create path without named route in ajax
+
+ | Field type   | jQuery value method                    |
+| ------------ | -------------------------------------- |
+| text / email | `$('#id').val()`                       |
+| select       | `$('#id').val()`                       |
+| radio        | `$('input[name=group]:checked').val()` |
+| checkbox     | same as radio (or array)               |
+
+| Method        | Purpose                     |
+| ------------- | --------------------------- |
+| `$.ajax()`    | Send request without reload |
+| `GET`         | Fetch data                  |
+| `forEach()`   | Loop through records        |
+| `${}`         | Insert values               |
+| `.html()`     | Display data                |
+| `loadtable()` | Run function                |
+
+
+
+@CSRF = Cross-Site Request Forgery (To protect your app from fake form submissions (CSRF attacks).)
+POST / PUT / DELETE in Laravel ALWAYS need CSRF token
+
+
+
+.map() = loop + collect values (.map() is used to loop through multiple elements and transform them)
+.get() = convert to array
+Used only when multiple values exist
+eg code:its for collect checkbox values
+skills: $('input[name="skills"]:checked')
+        .map(function(){ 
+            return this.value; 
+        })
+        .get(),
+
+----------------------ERROR XHR------------------------
+XHR means XMLHttpRequest — it’s the object that carries the server’s response back to JavaScript.
+error: function(xhr) {
+    $('#msg').text('An error occurred while saving data.');
+}
+Here, xhr holds details about what went wrong (status code, message, response).
+
+
+$.get() – READ
+$.post() – CREATE
+
+| jQuery    | Normal JS        |
+| --------- | ---------------- |
+| `.val()`  | `.value`         |
+| `.html()` | `innerHTML`      |
+| `.text()` | `innerText`      |
+| `.map()`  | `forEach + push` |
+| `.get()`  | `Array.from()`   |
+| `this`    | current element  |
+| `success` | `.then()`        |
+| `error`   | `.catch()`       |
+
+
+<button type="submit">Submit</button>
+$('#personalform').on('submit', function(e) {
+    e.preventDefault(); // ⛔ stop normal submit
+    savedata();  //function name its for what you want to happen when u click the submit button
+});
+| Using       | Button type                 |
+| ----------- | --------------------------- |
+| AJAX only   | `type="button"` ✅           |
+| Normal form | `type="submit"`             |
+| Both        | `submit + preventDefault()` |
+
+<button type="button" onclick="location.reload()">Reset</button>   (simple method to reset or reload page)
+What does location.reload() do?
+👉 location = current page URL
+👉 reload() = reload the page
+
+-------tailwind css--------
+<p class="text-sm">Small</p>                           
+<p class="text-base">Normal</p>
+<p class="text-lg">Large</p>
+<p class="text-xl">Extra Large</p>
+<p class="text-2xl">Bigger</p>
+<p class="text-3xl">Even Bigger</p>
+<p class="text-4xl">Very Big</p>
+
+text-lg → 18px
+text-xl → 20px     text-xl means font size is set to 1.25rem (20px).
+text-2xl → 24px
+text-3xl → 30px
+
+p-2 = padding: 0.5rem;  /* 8px */
+
+
+| Class  | Meaning      |
+| ------ | ------------ |
+| `m-4`  | all sides    |
+| `mt-4` | top          |
+| `mr-4` | right        |
+| `mb-4` | bottom       |
+| `ml-4` | left         |
+| `mx-4` | left + right |
+| `my-4` | top + bottom |
+--------------------
+| Class   | Value |
+| ------- | ----- |
+| `ml-1`  | 4px   |
+| `ml-2`  | 8px   |
+| `ml-4`  | 16px  |
+| `ml-8`  | 32px  |
+| `ml-16` | 64px  |
+
+<input                                                           rounded = radius
+  class="rnup-border-2 rnup-border-dashed rnup-border-green-500 rnup-rounded-md rnup-p-2 rnup-w-full"
+/>
+
+Tailwind border = border-width + border-style + border-color
+---------radio button style in tailwind------
+1. Increase radio button size in Tailwind CSS
+✔️ Method 1: Using scale-* (BEST & easiest)
+<input type="radio" class="scale-150">
+
+Common sizes
+
+scale-125   /* slightly bigger */
+scale-150   /* medium */
+scale-200   /* large */
+
+👉 Tailwind uses CSS transform:
+transform: scale(1.5);
+
+✔️ Radio with label (clean layout)
+<label class="flex items-center gap-2 text-lg">
+  <input type="radio" class="scale-150">
+  Male
+</label>
+
+✅ 2. Font styles in Tailwind (with examples)
+🔹 Font Family
+<p class="font-sans">Sans font (default)</p>
+<p class="font-serif">Serif font</p>
+<p class="font-mono">Monospace font</p>
+
+🔹 Font Size
+<p class="text-sm">Small text</p>
+<p class="text-base">Normal text</p>
+<p class="text-lg">Large text</p>
+<p class="text-xl">Extra large</p>
+<p class="text-2xl">Very large</p>
+
+🔹 Font Weight
+<p class="font-light">Light</p>
+<p class="font-normal">Normal</p>
+<p class="font-semibold">Semi Bold</p>
+<p class="font-bold">Bold</p>
+
+🔹 Text Style
+<p class="italic">Italic text</p>
+<p class="underline">Underlined</p>
+<p class="line-through">Strike text</p>
+<p class="uppercase">UPPERCASE</p>
+<p class="lowercase">lowercase</p>
+<p class="capitalize">capitalize text</p>
+
+🔹 Styled Text Example (real use)
+<p class="text-xl font-semibold text-blue-600 italic">
+  Welcome to Tailwind CSS
+</p>
+
+✅ 3. Radio button + styled text example
+<label class="flex items-center gap-3 text-lg font-medium text-gray-700">
+  <input type="radio" class="scale-150">
+  Agree Terms
+</label>
+
+| Class              | Purpose                    |
+| ------------------ | -------------------------- |
+| `rnup-mx-auto`     | Center container properly  |
+| `rnup-space-y-4`   | Equal space between fields |
+| `rnup-block`       | Label takes full line      |
+| `rnup-w-full`      | Input full width           |
+| `rnup-p-2`         | Proper padding             |
+| `rnup-text-center` | Center heading             |
+
