@@ -31,7 +31,7 @@ API returns JSON data or message → AJAX shows data in browser”)
 -Browser → displays result
 
 
-
+------------ajax continute-----------
 // url: "/poc_up3/public/personal/store",    this for create path without named route in ajax
 
  | Field type   | jQuery value method                    |
